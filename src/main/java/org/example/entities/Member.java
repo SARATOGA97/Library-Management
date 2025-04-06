@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Table(name = "members")
 @Data
 
-public class members {
+public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name = "members_id")
@@ -22,6 +22,7 @@ public class members {
     private LocalDateTime membershipData;
     @Column(name = "contact_info")
     private String contactInfo;
+
 
 
 

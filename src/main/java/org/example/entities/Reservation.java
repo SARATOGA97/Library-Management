@@ -9,19 +9,23 @@ import java.time.LocalDateTime;
 @Table(name = "reservations")
 @Data
 
-public class reservations {
+public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name = "reservation_id")
     private Long reservationId;
-    @Column (name = "book_id")
-    private Long bookId;
-    @Column (name = "member_id")
-    private Long memberId;
     @Column (name = "reservation_date")
     private LocalDateTime reservationDate;
     @Column (name = "return_date")
     private LocalDateTime returnDate;
+    @ManyToOne
+    @JoinColumn(name = "member_id")
+    private Member member;
+    @ManyToOne
+    @JoinColumn(name = "book_id")
+    private Book book;
+
+
 
 
 

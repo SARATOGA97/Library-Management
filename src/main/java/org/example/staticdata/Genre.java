@@ -1,6 +1,6 @@
 package org.example.staticdata;
 
-public enum genre {
+public enum Genre {
     ACTION,
     HORROR,
     FICTION
