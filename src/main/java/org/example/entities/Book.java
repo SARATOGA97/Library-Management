@@ -2,6 +2,7 @@ package org.example.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.example.staticdata.Genre;
 import org.hibernate.annotations.Columns;
 
 import java.time.LocalDate;
@@ -15,12 +16,12 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="book_id")
     private Long bookId;
-    @Column(name="book_title")
+    @Column(name="title")
     private String bookTitle;
-//    @Column(name="book_genre")
-//    private Enum
-    @Column(name="book_published_date")
-    private LocalDateTime bookPublishedDate;
+    @Enumerated(value = EnumType.STRING)
+    private Genre genre;
+    @Column(name="published_date")
+    private LocalDateTime publishedDate;
     private Integer quantity;
     @ManyToOne
     @JoinColumn(name="author_id")

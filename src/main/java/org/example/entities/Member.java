@@ -18,12 +18,8 @@ public class Member {
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
-    @Column(name = "membership_data")
-    private LocalDateTime membershipData;
+    @Column(name = "membership_date")
+    private LocalDateTime membershipDate;
     @Column(name = "contact_info")
     private String contactInfo;
-
-
-
-
 }

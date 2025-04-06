@@ -2,7 +2,9 @@ package org.example.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.example.staticdata.Status;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -15,9 +17,11 @@ public class Reservation {
     @Column (name = "reservation_id")
     private Long reservationId;
     @Column (name = "reservation_date")
-    private LocalDateTime reservationDate;
+    private LocalDate reservationDate;
     @Column (name = "return_date")
-    private LocalDateTime returnDate;
+    private LocalDate returnDate;
+    @Enumerated(value = EnumType.STRING)
+    private Status status;
     @ManyToOne
     @JoinColumn(name = "member_id")
     private Member member;
