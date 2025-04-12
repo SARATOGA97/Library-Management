@@ -21,7 +21,7 @@ public class Book {
     @Enumerated(value = EnumType.STRING)
     private Genre genre;
     @Column(name="published_date")
-    private LocalDateTime publishedDate;
+    private LocalDate publishedDate;
     private Integer quantity;
     @ManyToOne
     @JoinColumn(name="author_id")
