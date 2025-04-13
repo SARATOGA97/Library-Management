@@ -30,7 +30,7 @@ public class Main {
         MemberDao memberDao = new MemberDao(session);
         Book updatedBook = new Book();
         Member updatedMember=new Member();
-        ReservationDao reservationDao = new ReservationDao(session);
+        ReservationDao reservationDao = new ReservationDao(session,bookDao,memberDao);
         Reservation updatedReservation=new Reservation();
 
         ///*---------------* MENAXHIMI I AUTOREVE *----------------///
@@ -111,6 +111,7 @@ public class Main {
 //        memberDao.update(updatedMember,5L);
 
         // 3) *---------------* Shfaqja e Historikut të Rezervimeve *----------------//
+
         //Shfaqja e Historikut të Rezervimeve Të gjenden të gjitha rezervimet e kryera nga një anëtar specifik.//
 
         //AI Generated
@@ -135,10 +136,11 @@ public class Main {
 //        Reservation reservation = new Reservation();
 //        reservation.setMember(memberDao.findByID(3L));
 //        reservation.setBook(bookDao.findByID(1L));
-//        reservation.setReservationDate(LocalDate.now());
-//        reservation.setReturnDate(LocalDate.now().plusDays(30));
-//        reservation.setStatus(Status.RESERVED);
+//        reservation.setReservationDate(LocalDate.now());//duhen implementuar ne DAO
+//        reservation.setReturnDate(LocalDate.now().plusDays(30));//duhen implementuar ne DAO
+//        reservation.setStatus(Status.RESERVED);//duhen implementuar ne DAO
 //        reservationDao.create(reservation);
+        System.out.println(reservationDao.closeReservation(10L));
         // 1.1) *---------------* Fshirja e Rezervimeve *----------------//
 //        reservationDao.delete(L);
 
@@ -147,19 +149,19 @@ public class Main {
 //        reservationDao.update(updatedReservation,11L);
 
         // 3) *---------------* Kërkimi i Rezervimeve *----------------//
-        List<Reservation> reservations = reservationDao.findAllReservationsByStatus(Status.CANCELLED);
-        reservations.forEach(reservation -> {
-            System.out.println("-----------------------------------");
-            System.out.println("Reservation ID: " + reservation.getReservationId());
-            System.out.println("-----------------------------------");
-            System.out.println("Member Name: " + reservation.getMember().getFirstName() + " " + reservation.getMember().getLastName());
-            System.out.println("Member ID: " + reservation.getMember().getMemberId());
-            System.out.println("Book Title: " + reservation.getBook().getBookTitle());
-            System.out.println("Reservation Date: " + reservation.getReservationDate());
-            System.out.println("Return Date: " + reservation.getReturnDate());
-            System.out.println("Status: " + reservation.getStatus());
-            System.out.println("**********************************");
-        });
+//        List<Reservation> reservations = reservationDao.findAllReservationsByStatus(Status.CANCELLED);
+//        reservations.forEach(reservation -> {
+//            System.out.println("-----------------------------------");
+//            System.out.println("Reservation ID: " + reservation.getReservationId());
+//            System.out.println("-----------------------------------");
+//            System.out.println("Member Name: " + reservation.getMember().getFirstName() + " " + reservation.getMember().getLastName());
+//            System.out.println("Member ID: " + reservation.getMember().getMemberId());
+//            System.out.println("Book Title: " + reservation.getBook().getBookTitle());
+//            System.out.println("Reservation Date: " + reservation.getReservationDate());
+//            System.out.println("Return Date: " + reservation.getReturnDate());
+//            System.out.println("Status: " + reservation.getStatus());
+//            System.out.println("**********************************");
+//        });
 
         ///*---------------* SSHTESA TE VECANTA *----------------///
 
