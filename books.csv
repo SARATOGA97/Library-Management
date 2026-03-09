@@ -1,0 +1,6 @@
+book_id,title,genre,published_date,quantity,author_id
+1,Keshtjella,HISTORY,1970-12-01,6,4
+2,Shkëlqimi dhe rënia e Shokut Zylo,FICTION,1973-01-01,2,6
+3,Lufta dhe Paqja,HISTORY,1869-01-01,1,8
+4,Pse,HISTORY,1935-01-01,1,7
+5,"To Kill a Mockingbird,",FICTION,1960-01-01,2,9
